@@ -44,7 +44,18 @@
 
 .library-grid {
   display: grid;
+  justify-items: center;
+	justify-content: center;
+	align-items: center;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(9, minmax(100px, max-content));
+  grid-template-rows: repeat(9, minmax(1fr, max-content));
   border: 1px solid aqua;
+}
+
+.list-group-item {
+  height: 110px;
+  width: 250px;
+  padding: 4px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

@@ -21,20 +21,33 @@
     </div>
 
     <h2>Games Library</h2>
-    <div class="library-grid">
-      <!-- games go here -->
-    </div>
+    <!-- <div class="library-grid"></div> -->
+    <draggable
+      class="library-grid list-group"
+      :list="titles"
+      group="titles"
+      @change="log">
+        <div
+          class="list-group-item"
+          v-for="(title, index) in titles"
+          :key="title.name"
+          :alt="title.name"
+          style="border: 1px solid lime;"
+          :style="{ backgroundImage: 'url(' + title.img + ')' }">
+          {{ title.name }} {{ index }}
+        </div>
+    </draggable>
   </div>
 </template>
 
 <script>
-// import draggable from 'vuedraggable';
+import draggable from 'vuedraggable';
 import titlesJson from '../assets/titles.json';
 
 export default {
   name: 'TierLists',
   components: {
-    // draggable,
+    draggable,
   },
   data() {
     return {
