@@ -21,14 +21,12 @@
         class="list-group loved-row"
         :list="loved"
         group="titles"
-        style="border: 1px solid red;"
         @change="log">
           <div
             class="list-group-item"
             v-for="(title, index) in loved"
             :key="title.name"
             :alt="title.name"
-            style="border: 1px solid magenta;"
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
             {{ title.name }} {{ index }}
           </div>
@@ -39,14 +37,12 @@
         class="list-group liked-row"
         :list="liked"
         group="titles"
-        style="border: 1px solid red;"
         @change="log">
           <div
             class="list-group-item"
             v-for="(title, index) in liked"
             :key="title.name"
             :alt="title.name"
-            style="border: 1px solid magenta;"
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
             {{ title.name }} {{ index }}
           </div>
@@ -57,14 +53,12 @@
         class="list-group disliked-row"
         :list="disliked"
         group="titles"
-        style="border: 1px solid red;"
         @change="log">
           <div
             class="list-group-item"
             v-for="(title, index) in disliked"
             :key="title.name"
             :alt="title.name"
-            style="border: 1px solid magenta;"
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
               {{ title.name }} {{ index }}
           </div>
@@ -75,14 +69,12 @@
         class="list-group ondeck-row"
         :list="ondeck"
         group="titles"
-        style="border: 1px solid red;"
         @change="log">
           <div
             class="list-group-item"
             v-for="(title, index) in ondeck"
             :key="title.name"
             :alt="title.name"
-            style="border: 1px solid magenta;"
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
               {{ title.name }} {{ index }}
           </div>
@@ -90,7 +82,6 @@
     </div>
 
     <h2>Games Library</h2>
-    <!-- <div class="library-grid"></div> -->
     <draggable
       class="library-grid list-group"
       :list="titles"
@@ -101,7 +92,6 @@
           v-for="(title, index) in titles"
           :key="title.name"
           :alt="title.name"
-          style="border: 1px solid lime;"
           :style="{ backgroundImage: 'url(' + title.img + ')' }">
           {{ title.name }} {{ index }}
         </div>

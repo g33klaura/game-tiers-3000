@@ -10,7 +10,6 @@
 	justify-content: center;
 	flex-direction: column;
 	margin: 1rem;
-  border: 1px solid magenta;
 }
 
 .tiers-grid {
@@ -25,18 +24,22 @@
     'liked . . . .'
     'disliked . . . .'
     'ondeck . . . .';
-	margin: 2rem 4rem;
-  border: 1px solid lime;
+	margin: 2rem 4rem 3rem 4rem;
+  grid-gap: 6px;
 
   .loved { grid-area: loved; }
 	.liked { grid-area: liked; }
 	.disliked { grid-area: disliked; }
 	.ondeck { grid-area: ondeck; }
 
-  .loved-row { grid-row: 1; }
-  .liked-row { grid-row: 2; }
-  .disliked-row { grid-row: 3; }
-  .ondeck-row { grid-row: 4; }
+  .row-header {
+    font-size: 2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   // Tier rows have same grid-column values
   div[class$='-row'] {
@@ -46,6 +49,25 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  .loved-row { grid-row: 1; }
+  .liked-row { grid-row: 2; }
+  .disliked-row { grid-row: 3; }
+  .ondeck-row { grid-row: 4; }
+
+  .loved,
+  .loved-row,
+  .disliked,
+  .disliked-row {
+    background-color: rgba(#3c5df4, 0.2);
+  }
+
+  .liked,
+  .liked-row,
+  .ondeck,
+  .ondeck-row {
+    background-color: rgba(#7fd9f3, 0.2);
+  }
 }
 
 .library-grid {
@@ -54,8 +76,7 @@
 	justify-content: center;
 	align-items: center;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(9, minmax(1fr, max-content));
-  border: 1px solid aqua;
+  grid-gap: 6px;
   margin: 2rem 4rem;
 }
 
