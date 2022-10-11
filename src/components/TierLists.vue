@@ -16,13 +16,13 @@
       </div>
 
       <!-- Begin draggable tier rows -->
-      <!-- <div class="loved-row"> -->
-        <draggable
-          class="list-group loved-row"
-          :list="loved"
-          group="titles"
-          style="border: 1px solid red;"
-          @change="log">
+      <!-- Love it row -->
+      <draggable
+        class="list-group loved-row"
+        :list="loved"
+        group="titles"
+        style="border: 1px solid red;"
+        @change="log">
           <div
             class="list-group-item"
             v-for="(title, index) in loved"
@@ -32,14 +32,61 @@
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
             {{ title.name }} {{ index }}
           </div>
-        </draggable>
-      <!-- </div> -->
+      </draggable>
 
-      <div class="liked-row">Liked these</div>
+      <!-- Like it row -->
+      <draggable
+        class="list-group liked-row"
+        :list="liked"
+        group="titles"
+        style="border: 1px solid red;"
+        @change="log">
+          <div
+            class="list-group-item"
+            v-for="(title, index) in liked"
+            :key="title.name"
+            :alt="title.name"
+            style="border: 1px solid magenta;"
+            :style="{ backgroundImage: 'url(' + title.img + ')' }">
+            {{ title.name }} {{ index }}
+          </div>
+      </draggable>
 
-      <div class="disliked-row">Didn't like these</div>
+      <!-- Leave it row -->
+      <draggable
+        class="list-group disliked-row"
+        :list="disliked"
+        group="titles"
+        style="border: 1px solid red;"
+        @change="log">
+          <div
+            class="list-group-item"
+            v-for="(title, index) in disliked"
+            :key="title.name"
+            :alt="title.name"
+            style="border: 1px solid magenta;"
+            :style="{ backgroundImage: 'url(' + title.img + ')' }">
+              {{ title.name }} {{ index }}
+          </div>
+      </draggable>
 
-      <div class="ondeck-row">Haven't played these</div>
+      <!-- Haven't played row -->
+      <draggable
+        class="list-group ondeck-row"
+        :list="ondeck"
+        group="titles"
+        style="border: 1px solid red;"
+        @change="log">
+          <div
+            class="list-group-item"
+            v-for="(title, index) in ondeck"
+            :key="title.name"
+            :alt="title.name"
+            style="border: 1px solid magenta;"
+            :style="{ backgroundImage: 'url(' + title.img + ')' }">
+              {{ title.name }} {{ index }}
+          </div>
+      </draggable>
     </div>
 
     <h2>Games Library</h2>
