@@ -5,6 +5,39 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
   color: #2c3e50;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 1rem;
+  border: 1px solid magenta;
+}
+
+.tiers-grid {
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(4, minmax(100px, max-content));
+  grid-template-areas:
+    'loved . . . .'
+    'liked . . . .'
+    'disliked . . . .'
+    'ondeck . . . .';
+	margin: 2rem 4rem;
+  border: 1px solid lime;
+
+  .loved { grid-area: loved; }
+	.liked { grid-area: liked; }
+	.disliked { grid-area: disliked; }
+	.ondeck { grid-area: ondeck; }
+
+  .loved-row { grid-row: 1; }
+  .liked-row { grid-row: 2; }
+  .disliked-row { grid-row: 3; }
+  .ondeck-row { grid-row: 4; }
+
+  // Tier rows have same grid-column values
+  div[class$='-row'] { grid-column: 2 / span 4; }
 }
