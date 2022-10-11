@@ -19,7 +19,7 @@
 	justify-content: center;
 	align-items: center;
 	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: repeat(4, minmax(100px, max-content));
+	grid-template-rows: repeat(4, minmax(110px, max-content));
   grid-template-areas:
     'loved . . . .'
     'liked . . . .'
@@ -39,7 +39,13 @@
   .ondeck-row { grid-row: 4; }
 
   // Tier rows have same grid-column values
-  div[class$='-row'] { grid-column: 2 / span 4; }
+  div[class$='-row'] {
+    grid-column: 2 / span 4;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .library-grid {
@@ -50,6 +56,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(9, minmax(1fr, max-content));
   border: 1px solid aqua;
+  margin: 2rem 4rem;
 }
 
 .list-group-item {

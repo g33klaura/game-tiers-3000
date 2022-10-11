@@ -14,9 +14,31 @@
       <div class="ondeck row-header">
         Haven't played
       </div>
-      <div class="loved-row">Loved these</div>
+
+      <!-- Begin draggable tier rows -->
+      <!-- <div class="loved-row"> -->
+        <draggable
+          class="list-group loved-row"
+          :list="loved"
+          group="titles"
+          style="border: 1px solid red;"
+          @change="log">
+          <div
+            class="list-group-item"
+            v-for="(title, index) in loved"
+            :key="title.name"
+            :alt="title.name"
+            style="border: 1px solid magenta;"
+            :style="{ backgroundImage: 'url(' + title.img + ')' }">
+            {{ title.name }} {{ index }}
+          </div>
+        </draggable>
+      <!-- </div> -->
+
       <div class="liked-row">Liked these</div>
+
       <div class="disliked-row">Didn't like these</div>
+
       <div class="ondeck-row">Haven't played these</div>
     </div>
 
