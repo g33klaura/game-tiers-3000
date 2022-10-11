@@ -41,3 +41,10 @@
   // Tier rows have same grid-column values
   div[class$='-row'] { grid-column: 2 / span 4; }
 }
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(9, minmax(100px, max-content));
+  border: 1px solid aqua;
+}
