@@ -12,13 +12,14 @@
 	margin: 1rem;
 }
 
+// Upper tiers grid
 .tiers-grid {
 	display: grid;
 	justify-items: center;
 	justify-content: center;
 	align-items: center;
 	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: repeat(4, minmax(110px, max-content));
+	grid-template-rows: repeat(4, minmax(132px, max-content));
   grid-template-areas:
     'loved . . . .'
     'liked . . . .'
@@ -70,6 +71,7 @@
   }
 }
 
+// Library titles grid
 .library-grid {
   display: grid;
   justify-items: center;
@@ -86,4 +88,16 @@
   padding: 4px;
   background-size: contain;
   background-repeat: no-repeat;
+  border: 1px solid rgba(#7fd9f3, 0.2);
+  color: white;
+  text-align: start;
+  display: flex;
+  margin: 6px;
+
+  span {
+    align-self: flex-end;
+    background-color: rgba(#3c5df4, 0.2);
+    backdrop-filter: blur(2px);
+    padding: 1px 4px;
+  }
 }

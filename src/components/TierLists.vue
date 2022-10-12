@@ -2,18 +2,10 @@
   <div class="groot">
     <h1>My Tiers</h1>
     <div class="tiers-grid">
-      <div class="loved row-header">
-        Love it
-      </div>
-      <div class="liked row-header">
-        Like it
-      </div>
-      <div class="disliked row-header">
-        Leave it
-      </div>
-      <div class="ondeck row-header">
-        Haven't played
-      </div>
+      <div class="loved row-header">Love it</div>
+      <div class="liked row-header">Like it</div>
+      <div class="disliked row-header">Leave it</div>
+      <div class="ondeck row-header">Haven't played</div>
 
       <!-- Begin draggable tier rows -->
       <!-- Love it row -->
@@ -24,11 +16,11 @@
         @change="log">
           <div
             class="list-group-item"
-            v-for="(title, index) in loved"
+            v-for="(title) in loved"
             :key="title.name"
             :alt="title.name"
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
-            {{ title.name }} {{ index }}
+              <span>{{ title.name }}</span>
           </div>
       </draggable>
 
@@ -40,11 +32,11 @@
         @change="log">
           <div
             class="list-group-item"
-            v-for="(title, index) in liked"
+            v-for="(title) in liked"
             :key="title.name"
             :alt="title.name"
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
-            {{ title.name }} {{ index }}
+              <span>{{ title.name }}</span>
           </div>
       </draggable>
 
@@ -56,11 +48,11 @@
         @change="log">
           <div
             class="list-group-item"
-            v-for="(title, index) in disliked"
+            v-for="(title) in disliked"
             :key="title.name"
             :alt="title.name"
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
-              {{ title.name }} {{ index }}
+              <span>{{ title.name }}</span>
           </div>
       </draggable>
 
@@ -72,11 +64,11 @@
         @change="log">
           <div
             class="list-group-item"
-            v-for="(title, index) in ondeck"
+            v-for="(title) in ondeck"
             :key="title.name"
             :alt="title.name"
             :style="{ backgroundImage: 'url(' + title.img + ')' }">
-              {{ title.name }} {{ index }}
+              <span>{{ title.name }}</span>
           </div>
       </draggable>
     </div>
@@ -89,11 +81,11 @@
       @change="log">
         <div
           class="list-group-item"
-          v-for="(title, index) in titles"
+          v-for="(title) in titles"
           :key="title.name"
           :alt="title.name"
           :style="{ backgroundImage: 'url(' + title.img + ')' }">
-          {{ title.name }} {{ index }}
+            <span>{{ title.name }}</span>
         </div>
     </draggable>
   </div>
